@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Generator haseł — offline</title>
+<meta name="description" content="Losuj mocne hasła lokalnie w przeglądarce (crypto.getRandomValues). Siła w bitach entropii, kopiowanie 1 klikiem. Nic nie opuszcza urządzenia.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔑</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <!-- TODO: link do portfolio, gdy powstanie -->
+  <h1>Generator haseł</h1>
+  <p>100% offline — hasło nigdy nie opuszcza przeglądarki.</p>
+  <section class="card">
+    <label>Długość: <strong id="len-label">16</strong>
+      <input id="len" type="range" min="8" max="32" value="16"></label>
+    <p>
+      <label><input id="c-low" type="checkbox" checked> a-z</label>
+      <label><input id="c-up" type="checkbox" checked> A-Z</label>
+      <label><input id="c-num" type="checkbox" checked> 0-9</label>
+      <label><input id="c-sym" type="checkbox" checked> !@#…</label>
+    </p>
+    <button id="gen" type="button">Losuj hasło</button>
+  </section>
+  <section class="card">
+    <div id="out" class="big" style="word-break:break-all"></div>
+    <div class="progress"><div id="bar" style="width:0%"></div></div>
+    <p id="strength" class="hint"></p>
+    <button id="copy" type="button">Kopiuj</button>
+  </section>
+  <div id="ads-slot" hidden></div>
+  <footer><a href="privacy.html">Prywatność</a> · <a href="kontakt.html">Kontakt</a></footer>
+</main>
+<script src="app.js"></script>
+<script src="ads.js"></script>
+</body>
+</html>
